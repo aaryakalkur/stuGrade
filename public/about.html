@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e1e1e, #333);
+            color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .about-content {
+            background: rgba(48, 48, 48, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #bb86fc;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #bb86fc;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #bb86fc;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #9c67e8;
+        }
+
+        .footer {
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            position: static;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <div class="container">
+        <div class="about-content">
+            <h1>Welcome to stuGrade</h1>
+            <p>At stuGrade, we are dedicated to providing students with an intuitive and efficient tool for managing their academic grades. Our platform helps students keep track of their grades, calculate averages, and organize their academic performance effectively.</p>
+
+            <h2>Our Mission</h2>
+            <p>Our mission is to empower students by giving them the tools they need to understand and improve their academic performance. We believe that with the right tools and information, students can achieve their educational goals and excel in their studies.</p>
+
+            <h2>Our Vision</h2>
+            <p>We envision a world where every student has easy access to reliable and user-friendly tools for managing their education. By continuously innovating and improving our platform, we strive to make a positive impact on students' academic journeys.</p>
+
+            <h2>Our Team</h2>
+            <p>Our team is composed of passionate individuals who are dedicated to enhancing the student experience. We come from diverse backgrounds and bring a wealth of experience in education, technology, and design to create the best possible product for our users.</p>
+
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <a href="https://github.com/aaryakalkur" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aarya-r-kalkur-920267221" target="_blank">LinkedIn</a>
+                <a href="mailto:aaryarkalkur@gmail.com">Email</a>
+                <a href="https://aaryakalkur.github.io/resume/" target="_blank">Website</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 stuGrade. All rights reserved.</p>
+    </footer>
+</body>
+</html>

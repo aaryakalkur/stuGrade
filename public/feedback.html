@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e1e1e, #333);
+            color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .feedback-form {
+            background: rgba(48, 48, 48, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #bb86fc;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            background-color: #333;
+            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #bb86fc;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #9c67e8;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #7b56c7;
+        }
+
+        .footer {
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 15px;
+            position: static;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>stuGrade Feedback</h1>
+    </header>
+    <div class="container">
+        <div class="feedback-form">
+            <h1>Feedback Form</h1>
+            <form id="feedbackForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 stuGrade. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulate feedback submission and show a thank you message
+            alert('Thank you for your feedback!');
+            window.location.href = 'calculator.html'; // Redirect to calculator.html
+        });
+    </script>
+</body>
+</html>

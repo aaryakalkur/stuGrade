@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - stuGrade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background: rgba(48, 48, 48, 0.9);
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #ff7675;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+            color: #e0e0e0;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #333;
+            color: #e0e0e0;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #ff7675;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff7675;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e74c3c;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #c0392b;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 0;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #e0e0e0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #ff7675;
+        }
+
+        .login-link a {
+            color: #ff7675;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        stuGrade - Student Personal Grade Management Tool
+    </div>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 stuGrade. All rights reserved.
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('Registration successful! Redirecting to login page...');
+                    window.location.href = 'login.html'; // Redirect on successful registration
+                } else {
+                    alert(result.message); // Display error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
